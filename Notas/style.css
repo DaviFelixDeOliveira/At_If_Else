@@ -1,0 +1,290 @@
+/*Criação de variáveis*/
+:root{
+    /*Dando o modo dark e light ao formulário e a cor do backgroud*/
+    --color-light-50: #f8fafc;
+    --color-dark-50: #797984;
+    --color-dark-100: #312d37;
+    --color-dark-900: #000;
+    --color-purple-50: #7c3aed;
+    --color-purple-100:#a855f7;
+    --color-purple-200:#bf46ef;
+    --color-gradient: linear-gradient(90deg, var(--color-purple-50) , var(--color-purple-100), var(--color-purple-200));
+}
+
+*{
+
+     font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#container{ /* id da tag main do html que pega todos os elementos do body*/
+
+    height: 100vh;
+    width: 100%;
+    background: var(--color-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+#login_form{ /*id do formulário todo*/
+
+    background-color: var(--color-light-50);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 8px;
+    gap: 30px; /*Coloca o espaçamento entre os elementos*/
+    box-shadow: 7px 7px rgba(0,0,0,0.336);
+    height: fit-content;
+    animation: dark-to-light 0.3s ease-in-out;
+}
+
+#form_header /*id do icone da lua e h1 de login*/{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#form_header /*id do icone da lua e h1 de login*/ h1{
+
+    font-size: 40px;
+    position: relative;
+}
+
+#form_header /*id do icone da lua e h1 de login*/ h1::before{
+    position: absolute;
+    content: '';
+    width: 40%;
+    background-color: var(--color-purple-50);
+    height: 3px;
+    bottom: 5px; 
+    border-radius: 5px;
+}
+
+#mode_icon{ /*id do icone de lua*/
+
+    cursor: pointer;
+    font-size: 20px;
+    
+}
+
+#social_media{ /*id dos icones*/
+    display: flex;
+    justify-content: space-around;
+
+}
+#social_media  /*id dos icones*/img{
+
+    width: 35px;
+}
+
+#social_media  /*id dos icones*/img:hover{
+    transform: scale(1.2);
+}
+
+#inputs{/*id dos inputs*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /*Coloca o espaçamento entre os elementos*/
+
+}
+
+.input-box label{ /*class de todo o input e icone*/
+
+    font-size: 14px;
+    color: var(--color-dark-50);
+}
+
+.input-field /*class apenas do icone e input*/{ 
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 3px;
+    cursor: text;
+    border-bottom: 1px solid var(--color-purple-50);
+}
+
+.input-field /*class apenas do icone e input*/ i{
+    font-size: 18px;
+    color: var(--color-dark-900);
+
+}
+
+.input-field /*class apenas do icone e input*/ input{
+
+    border: none;
+    background-color: transparent;
+    width: 260px;
+    font-size: 18px;
+
+}
+
+.input-field /*class apenas do icone e input*/ input:focus{
+    outline: none; /* tirar a borda do input*/
+}
+
+
+#forgot_password /*class do esquecimento da senha*/ a{ 
+    text-decoration: none;
+    color: var(--color-dark-50);
+    font-size: 12px;
+    color:var(--color-purple-50)
+}
+
+#forgot_password /*class do esquecimento da senha*/ a:hover{
+    color: var(--color-purple-50);
+}   
+
+
+#login_buttom /*id do botão de login*/{
+    border: none;
+    background: var(--color-gradient);
+    color: var(--color-light-50);
+    padding: 7px;
+    font-size: 18px;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#login_buttom:hover{
+   opacity: 0.9;
+}
+
+.dark#login_form{
+    color: var(--color-light-50);
+    background-color: var(--color-dark-100);
+    animation: light-to-dark 0.3s ease-in-out;
+}
+
+.dark#login_form .input-field input,
+.dark#login_form .input-field i{
+    color: var(--color-light-50);
+}
+
+@keyframes dark-to-light{
+    0%{
+        background-color: var(--color-dark-100);
+    }
+
+    100%{
+        background-color: var(--color-light-50);
+    }
+}
+
+@keyframes light-to-dark{
+    0%{
+        background-color: var(--color-light-50);
+    }
+
+    100%{
+        background-color: var(--color-dark-100);
+    }
+}
+
+.form-control {
+  position: relative;
+  margin: 20px 0 40px;
+  width: 190px;
+}
+
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #fff solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: lightblue;
+}
+
+.form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
+
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  color: #fff;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus+label span,
+.form-control input:valid+label span {
+  color: lightblue;
+  transform: translateY(-30px);
+}
+
+.inputbox {
+    position: relative;
+    width: 196px;
+  }
+  
+  .inputbox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+  }
+  
+  .inputbox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 10px 10px;
+    font-size: 1em;
+    color: #8f8f8f;
+    letter-spacing: 00.05em;
+    transition: 0.5s;
+    pointer-events: none;
+  }
+  
+  .inputbox input:valid ~span,
+  .inputbox input:focus ~span {
+    color: #45f3ff;
+    transform: translateX(-10px) translateY(-34px);
+    font-size: 0,75em;
+  }
+  
+  .inputbox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #45f3ff;
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+  }
+  
+  .inputbox input:valid ~i,
+  .inputbox input:focus ~i {
+    height: 44px;
+  }

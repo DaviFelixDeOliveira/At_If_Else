@@ -1,0 +1,273 @@
+
+
+
+/*Criação de variáveis*/
+:root{
+    /*Dando o modo dark e light ao formulário e a cor do backgroud*/
+    --color-light-50: #f8fafc;
+    --color-dark-50: #797984;
+    --color-dark-100: #312d37;
+    --color-dark-900: #000;
+    --color-purple-50: #7c3aed;
+    --color-purple-100:#a855f7;
+    --color-purple-200:#bf46ef;
+    --color-gradient: linear-gradient(90deg, var(--color-purple-50) , var(--color-purple-100), var(--color-purple-200));
+}
+
+*{
+
+     font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#container{ /* id da tag main do html que pega todos os elementos do body*/
+
+    height: 100vh;
+    width: 100%;
+    background: var(--color-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+#login_form{ /*id do formulário todo*/
+
+    background-color: var(--color-light-50);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 8px;
+    gap: 30px; /*Coloca o espaçamento entre os elementos*/
+    box-shadow: 7px 7px rgba(0,0,0,0.336);
+    height: fit-content;
+    animation: dark-to-light 0.3s ease-in-out;
+}
+
+#form_header /*id do icone da lua e h1 de login*/{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#form_header /*id do icone da lua e h1 de login*/ h1{
+
+    font-size: 40px;
+    position: relative;
+}
+
+#form_header /*id do icone da lua e h1 de login*/ h1::before{
+    position: absolute;
+    content: '';
+    width: 40%;
+    background-color: var(--color-purple-50);
+    height: 3px;
+    bottom: 5px; 
+    border-radius: 5px;
+}
+
+#mode_icon{ /*id do icone de lua*/
+
+    cursor: pointer;
+    font-size: 20px;
+    
+}
+
+#social_media{ /*id dos icones*/
+    display: flex;
+    justify-content: space-around;
+
+}
+#social_media  /*id dos icones*/img{
+
+    width: 35px;
+}
+
+#social_media  /*id dos icones*/img:hover{
+    transform: scale(1.2);
+}
+
+#inputs{/*id dos inputs*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /*Coloca o espaçamento entre os elementos*/
+
+}
+
+.input-box label{ /*class de todo o input e icone*/
+
+    font-size: 14px;
+    color: var(--color-dark-50);
+}
+
+.input-field /*class apenas do icone e input*/{ 
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 3px;
+    cursor: text;
+    border-bottom: 1px solid var(--color-purple-50);
+}
+
+.input-field /*class apenas do icone e input*/ i{
+    font-size: 18px;
+    color: var(--color-dark-900);
+
+}
+
+.input-field /*class apenas do icone e input*/ input{
+
+    border: none;
+    background-color: transparent;
+    width: 260px;
+    font-size: 18px;
+
+}
+
+.input-field /*class apenas do icone e input*/ input:focus{
+    outline: none; /* tirar a borda do input*/
+}
+
+
+#forgot_password /*class do esquecimento da senha*/ a{ 
+    text-decoration: none;
+    color: var(--color-dark-50);
+    font-size: 12px;
+    color:var(--color-purple-50)
+}
+
+#forgot_password /*class do esquecimento da senha*/ a:hover{
+    color: var(--color-purple-50);
+}   
+
+
+#login_buttom /*id do botão de login*/{
+    border: none;
+    background: var(--color-gradient);
+    color: var(--color-light-50);
+    padding: 7px;
+    font-size: 18px;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#login_buttom:hover{
+   opacity: 0.9;
+}
+
+.dark#login_form{
+    color: var(--color-light-50);
+    background-color: var(--color-dark-100);
+    animation: light-to-dark 0.3s ease-in-out;
+}
+
+.dark#login_form .input-field input,
+.dark#login_form .input-field i{
+    color: var(--color-light-50);
+}
+
+@keyframes dark-to-light{
+    0%{
+        background-color: var(--color-dark-100);
+    }
+
+    100%{
+        background-color: var(--color-light-50);
+    }
+}
+
+@keyframes light-to-dark{
+    0%{
+        background-color: var(--color-light-50);
+    }
+
+    100%{
+        background-color: var(--color-dark-100);
+    }
+}
+
+.card {
+    position: absolute;
+    bottom: 38%;
+    right: 42%;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    background-color: #24233b;
+    border-radius: 8px;
+    z-index: 1;
+    box-shadow: 0px 10px 10px rgb(73, 70, 92);
+    transition: 0.5s;
+  }
+  
+  .card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0px 10px 10px black;
+  }
+  
+  .top {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+  }
+  
+  .circle {
+    padding: 0 4px;
+  }
+  
+  .circle2 {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 5px;
+  }
+  
+  .red {
+    background-color: #ff605c;
+  }
+  
+  .yellow {
+    background-color: #ffbd44;
+  }
+  
+  .green {
+    background-color: #00ca4e;
+  }
+  
+  .header {
+    margin: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+  }
+  
+  #title2 {
+    color: white;
+    padding-left: 50px;
+    font-size: 15px;
+  }
+  
+  .code-container {
+    text-align: center;
+  }
+  #code {
+    width: 270px;
+    height: 150px;
+    resize: none;
+    background-color: rgb(73, 70, 92);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 10px;
+  }
+  #code:focus {
+    outline: none !important;
+  }
+  

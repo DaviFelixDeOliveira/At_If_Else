@@ -288,3 +288,7 @@
   .inputbox input:focus ~i {
     height: 44px;
   }
+
+  body{
+    background-color: rgb(0, 10, 53);
+}

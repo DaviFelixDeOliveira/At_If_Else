@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-
 
 <div class="card">
   <div class="header">
@@ -23,7 +21,7 @@
         <span class="green circle2"></span>
       </div>
       <div class="title">
-        <p id="title2">Resultado</p>
+        <p id="title2"><big><big><big>Resultado</big></big></big></p>
       </div>
     </div>
   </div>
@@ -62,8 +60,7 @@ elseif ($imc >= 40) {
 }
 ?>
 
-</textarea
-    >
+</textarea>
   </div>
 </div>
 

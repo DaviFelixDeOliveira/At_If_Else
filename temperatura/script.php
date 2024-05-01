@@ -1,45 +1,61 @@
-'<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado Temperatura</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../imc/style.css">
+</head>
+<body>
+
+<div class="card">
+  <div class="header">
+    <div class="top">
+      <div class="circle">
+        <span class="red circle2"></span>
+      </div>
+      <div class="circle">
+        <span class="yellow circle2"></span>
+      </div>
+      <div class="circle">
+        <span class="green circle2"></span>
+      </div>
+      <div class="title">
+        <p id="title2"><big><big><big>Resultado</big></big></big></p>
+      </div>
+    </div>
+  </div>
+  <div class="code-container">
+    <textarea readonly="" name="code" id="code" class="area">
+
+<?php
  $temperatura = $_POST['temperatura'];
  
 
 if ($temperatura < 0) {
     echo "sinto muito frio, meu coração congelou 🥶";
-
-
 }
 
 elseif ($temperatura >=0 && $temperatura <15) {
-
     echo "ainda sinto muito frio, meu coração congelou um pouco 🧊";
-
 }
 
 elseif ($temperatura >= 15 && $temperatura < 25) {
-
     echo "ainda sinto um pouco de  frio, meu coração está gelado mas não congelado ❄";
 }
 
 elseif ($temperatura > 25) {
     echo "não sinto muito frio, meu coração está quente ♨";
 }
+?>
+</textarea>
+  </div>
+</div>
+
+<button class="btn"> <a href="index.html">voltar</a></button>
 
 
-
-
-
-
-
-?>'
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<button class="btn"> <a href="index.html">voltar    </a>
-</button>
 
 <style>
     .btn {
@@ -94,6 +110,6 @@ elseif ($temperatura > 25) {
      opacity: 0;
     }
 </style>
-    
+
 </body>
 </html>
